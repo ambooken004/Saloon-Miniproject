@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import './Cards.css';
+import { Link } from 'react-router-dom';
 
 const Cards = ({ cards }) => {
   return (
@@ -14,7 +15,9 @@ const Cards = ({ cards }) => {
             <Card.Text>{card.description}
               <h6 className='mt-3'>Rs: {card.rate}</h6>
             </Card.Text>
-            <Button variant="outline-light rounded-pill">Book Time Slot</Button>
+             <Button variant="outline-light rounded-pill">
+              <Link to='/timeslotpage' style={{ textDecoration: "none"}}>Book Time Slot</Link>
+            </Button>
             </Card.Body>
         </Card>
         ))

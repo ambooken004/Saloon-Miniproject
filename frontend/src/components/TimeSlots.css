@@ -1,0 +1,7 @@
+.time-slot-container
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
