@@ -1,0 +1,60 @@
+.back-btn
+{
+    margin: 10px;
+    width: 80px;
+    height: 40px;
+    color: whitesmoke;
+    background-color: black;
+    border-radius: 40px;
+    cursor: pointer;
+    position: relative;
+}
+.login-h1
+{
+    text-align: center;
+    align-items: center;
+    margin: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.main
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-container
+{
+    width: 35%;
+    height: 370px;
+    border: 5px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    /* margin-top: 150px;
+    margin-left: 400px; */
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.login-btns
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 830px)
+{
+    .main
+    {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.back-btn:hover
+{
+    background-color: whitesmoke;
+    color: black;
+    width: 82px;
+    height: 42px;
+}

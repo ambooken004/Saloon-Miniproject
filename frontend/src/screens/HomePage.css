@@ -1,0 +1,40 @@
+.main-body
+{
+    height: 160vh;
+    background-image: url('https://img.freepik.com/free-photo/handsome-man-barber-shop-styling-hair_1303-20978.jpg');
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text
+{
+    width: 600px;
+    height: 200px;
+}
+@keyframes move-up-down
+{
+    0%
+    {
+        transform: translateY(0);
+    }
+    50%
+    {
+        transform: translateY(-20px);
+    }
+    100%
+    {
+        transform: translateY(0);
+    }
+
+}
+
+.quote
+{
+    font-size: 50px;
+    color: white;
+    animation: move-up-down 5s ease-in-out infinite;
+}

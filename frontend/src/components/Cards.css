@@ -1,0 +1,18 @@
+.main
+{
+    min-height: 10vh;
+}
+.card-container
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.card-line-item
+{
+    flex: 1 0 calc(20% - 20px);
+    background-color: black;
+    border: 0;
+    color: whitesmoke;
+}

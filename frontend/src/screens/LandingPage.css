@@ -1,0 +1,74 @@
+.landing-main
+{
+    min-height: 100vh;
+    align-items: center;
+    display: flex;
+    /* background-image: url('https://m.media-amazon.com/images/I/61dFjT581DL._SL1500_.jpg'); */
+    background-attachment: fixed;
+    background-size: cover;
+    /* opacity: 0.88; */
+}
+@keyframes rotate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+.barber-tools
+{
+    width: 300px;
+    height: 300px;
+    margin-left: 15px;
+    animation: rotate infinite 10s linear;
+}
+.landing-page-block
+{
+    text-align: center;
+    margin-top: 8%;
+}
+.intro-text
+{
+    text-align: center;
+    color: black;
+}
+.title
+{
+    font-size: 75px;
+}
+.subtitle
+{
+    font-size: 25px;
+    padding: 10px;
+}
+@media only screen and (max-width: 768px)
+{
+    .title
+    {
+        font-size: 60px;
+    }
+}
+@keyframes move-up-down
+{
+    0%
+    {
+        transform: translateY(0);
+    }
+    50%
+    {
+        transform: translateY(-30px);
+    }
+    100%
+    {
+        transform: translateY(0);
+    }
+}
+.intro-text
+{
+    animation: move-up-down 6s ease-in-out infinite;
+}
+

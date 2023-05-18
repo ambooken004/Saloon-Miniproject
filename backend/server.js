@@ -7,6 +7,10 @@ app.get('/', (req, res) => {
     res.send("API is running though...");// created an API
 });
 
+app.get('/about', (req, res) => {
+    res.send("This is about us page");// created an API
+});
+
 
 
 
