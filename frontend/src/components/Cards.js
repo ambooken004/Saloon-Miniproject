@@ -4,6 +4,7 @@ import './Cards.css';
 import { Link } from 'react-router-dom';
 
 const Cards = ({ cards }) => {
+  
   return (
     <div className='card-container'>
       {
@@ -16,7 +17,7 @@ const Cards = ({ cards }) => {
               <h6 className='mt-3'>Rs: {card.rate}</h6>
             </Card.Text>
              <Button variant="outline-light rounded-pill">
-              <Link to='/timeslotpage' style={{ textDecoration: "none"}}>Book Time Slot</Link>
+              <Link to={`/timeslotpage`} style={{ textDecoration: "none"}}>Book Time-Slot</Link>
             </Button>
             </Card.Body>
         </Card>
