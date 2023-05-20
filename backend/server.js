@@ -2,25 +2,26 @@ const express = require('express');
 const timeslotdatas = require('./data/timeSlotData');
 const app = express();
 const dotenv = require('dotenv').config();
+const userRoutes = require('./routes/userRoutes');
+const connectDB = require('./config/db.js');
+const { notFound, errorHandler } = require('./middlewares/errorMiddleware');
 
+connectDB();
+
+app.use(express.json()); // to accept json data from user
 
 app.get('/', (req, res) => {
-    res.send("API is running though...");// created an API
+    res.send("API is running though..."); // created an API
 });
-
-/* app.get('/about', (req, res) => {
-    res.send("This is about us page");// created an API
-}); */
 
 app.get('/api/timeslotdata', (req, res) => {
     res.json(timeslotdatas);
 });
 
+app.use('/api/users', userRoutes);
 
-
-
-
-
+app.use(notFound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 4000;
 
