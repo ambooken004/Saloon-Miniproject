@@ -18,6 +18,7 @@ const AppointmentsPage = () => {
     <div className='appointments-container'>
       <Header />
       <Container>
+        <h1 className='appointments-heading text-white text-center mt-2 p-1'>Our Services</h1>
         <main className='main'></main>
         <Cards cards = {cardsDetails}/>
       </Container>
