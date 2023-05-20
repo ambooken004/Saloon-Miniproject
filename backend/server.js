@@ -1,5 +1,6 @@
 const express = require('express');
 const timeslotdatas = require('./data/timeSlotData');
+const servicesData = require('./data/saloonServicesData');
 const app = express();
 const dotenv = require('dotenv').config();
 const userRoutes = require('./routes/userRoutes');
@@ -16,6 +17,10 @@ app.get('/', (req, res) => {
 
 app.get('/api/timeslotdata', (req, res) => {
     res.json(timeslotdatas);
+});
+
+app.get('/api/servicesdata', (req, res) => {
+    res.json(servicesData);
 });
 
 app.use('/api/users', userRoutes);
