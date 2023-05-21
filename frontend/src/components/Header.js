@@ -1,9 +1,12 @@
 import React from 'react';
 import './Header.css';
 import { Container, Navbar, Nav, NavDropdown, } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
+
+  const navigate = useNavigate();
+   
   return (
     <Navbar className='navbar' expand="lg" variant='dark'>
       <Container>
@@ -27,8 +30,12 @@ const Header = () => {
               <Link to='/timeslotpage' style={{ textDecoration: "none", color: "whitesmoke"}}>Time-Slots</Link>
             </Nav.Link>
             <NavDropdown title="Your Name" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">My Profile</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Log Out</NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to='/loginpage' style={{ textDecoration: "none", color: "black"}} onClick={() => {
+                  localStorage.removeItem("userInfo");
+                  navigate('/loginpage');
+                }}>Log Out</Link>
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

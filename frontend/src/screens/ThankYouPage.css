@@ -1,0 +1,28 @@
+/* body
+{
+    background-image: url("https://previews.123rf.com/images/elena3567/elena35672012/elena3567201200008/160332931-hair-salon-logo-design-illustration-on-white-background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+} */
+
+
+.thankyou-container
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin: 100px auto 100px;
+}
+.thankyou-block
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
