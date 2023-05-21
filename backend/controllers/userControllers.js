@@ -6,6 +6,12 @@ const generateToken = require('../utils/generateToken');
 const registerUser = asyncHandler(async (req, res) => {
 
     const { email, password } = req.body;
+
+    /* if(!email || !password)
+    {
+        res.status(400);
+        throw new Error("All fields are mandatory");
+    } */
     
     const userExists = await User.findOne({ email });
 
@@ -36,6 +42,12 @@ const registerUser = asyncHandler(async (req, res) => {
 const authUser = asyncHandler(async (req, res) => { // checking email in order to login
 
     const { email, password } = req.body;
+
+    if(!email || !password)
+    {
+        res.status(400);
+        throw new Error("All fields are mandatory");
+    } 
 
     const user = await User.findOne({ email });
 
