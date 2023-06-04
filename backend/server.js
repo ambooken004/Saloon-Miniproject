@@ -8,20 +8,24 @@ const timeslotRoutes = require('./routes/timeslotRoutes');
 const Timeroute= require("./routes/TimeRoute")
 const connectDB = require('./config/db.js');
 const TimeSchema=require("./models/TimeModel")
+const cors=require("cors")
 const { notFound, errorHandler } = require('./middlewares/errorMiddleware');
 
 connectDB();
 const PORT = process.env.PORT || 8000;
+app.use(cors())
 
 app.use(express.json()); // to accept json data from user
-app.get("/time",(req,res)=>{
-    res.send("ferno")
+app.get("/alltime",async(req,res)=>{
+    const alldata=await TimeSchema.find()
+    res.send(alldata)
  })
 
 app.get('/', (req, res) => {
     res.send("API is running though..."); // created an API
 });
 app.post("/timeadd",async(req,res)=>{
+    console.log(req.body.data)
     const isExist=await TimeSchema.findOne({id:req.body.data.id})
     if(!isExist)
     {
