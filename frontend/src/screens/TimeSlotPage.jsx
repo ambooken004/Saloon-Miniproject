@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './TimeSlotPage.css';
 import Header from '../components/Header';
 import axios from "axios"
+import { useNavigate } from 'react-router-dom';
 const TimeSlotPage = () => {
+const history=useNavigate()
 const [bookedslot,setBookedslots]=useState({id:1,timeslot:[]})
 const [Loading,setLoading]=useState(true)
 const [availbleTimeslot,SetavailableTimeslot]=useState(["3.00 to 3.30pm","3.30 to 4.00pm","4.00 to 4.30pm","4.30 to 5.00pm","5.00 to 5.30pm","5.30 to 6.00pm"])
@@ -11,15 +13,16 @@ setBookedslots({...bookedslot,timeslot:[...bookedslot.timeslot,item]})
 console.log(bookedslot)
 }
 useEffect(()=>{
-  axios.get("http://localhost:8000/alltime").then((responce)=>{
-  setBookedslots({...bookedslot,timeslot:responce.data[0].timeslot})
+  axios.get("http://localhost:4000/alltime").then((responce)=>{
+  setBookedslots({...bookedslot,timeslot:responce.data[0] ? responce.data[0].timeslot:[]})
   setLoading(false)
   }) 
 },[])
 const loadtoserver=()=>{
-axios.post("http://localhost:8000/timeadd",{data:bookedslot}).then((responce)=>{
+axios.post("http://localhost:4000/timeadd",{data:bookedslot}).then((responce)=>{
   if(responce)
   alert("You have Successfully Booked......")
+  history("/thankyoupage")
 })
 }
   return (
