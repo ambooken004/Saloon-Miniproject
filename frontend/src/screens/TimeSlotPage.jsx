@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './TimeSlotPage.css';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import TimeSlots from '../components/TimeSlots';
 import { Button } from 'react-bootstrap';
-import axios from 'axios';
+//import axios from 'axios';
 
 
 const TimeSlotPage = () => {
-  const [data, setData] = useState([]);
+  
+  //const [data, setData] = useState([]);
+  
+  //const [slot, setSlot] = useState([]);
 
-  useEffect(() => {
+  /* useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('/api/timeslotdata'); // Replace '/api/data' with your actual backend API endpoint
@@ -20,14 +23,22 @@ const TimeSlotPage = () => {
       }
     };
 
+
     fetchData();
-  }, []);
+  },); */
+
+  /* const confirmBooked = () => {
+    setSlot("BOOKED");
+  }; */
+
+  
+
   return (
     <>
       <Header />
       <h1 className='text-center m-4'>Choose Your Time-Slot</h1>
       <div className='time-container text-center'>
-        <TimeSlots slotdatas = {data} />
+        <TimeSlots />
       </div>
       <div className='text-center'>
         <Button variant='success' className='mt-0 rounded-pill h-25 w-25 m-1'>

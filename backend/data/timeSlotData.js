@@ -1,4 +1,4 @@
-const timeSlotData = [
+/* const timeSlotData = [
     {
       id: "1",
       time: "9:00AM - 9:30AM",
@@ -76,4 +76,4 @@ const timeSlotData = [
     }
   ];
   
-  module.exports = timeSlotData;
+  module.exports = timeSlotData; */
