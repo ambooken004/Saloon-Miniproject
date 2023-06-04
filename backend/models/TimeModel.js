@@ -1,5 +1,8 @@
 const mongoose=require("mongoose")
 const TimeSchema=mongoose.Schema({
-    data:[]
+    id:Number,
+    timeslot:[]
+},{
+    timestamps:true
 })
 module.exports=mongoose.model("TimeslotCreated",TimeSchema);
