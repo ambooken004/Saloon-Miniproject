@@ -17,7 +17,10 @@ useEffect(()=>{
   }) 
 },[])
 const loadtoserver=()=>{
-axios.post("http://localhost:8000/timeadd",{data:bookedslot}).then((responce)=>{console.log("hello",responce)})
+axios.post("http://localhost:8000/timeadd",{data:bookedslot}).then((responce)=>{
+  if(responce)
+  alert("You have Successfully Booked......")
+})
 }
   return (
     <>
