@@ -1,49 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './TimeSlotPage.css';
-import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-import TimeSlots from '../components/TimeSlots';
-import { Button } from 'react-bootstrap';
-//import axios from 'axios';
-
-
 const TimeSlotPage = () => {
-  
-  //const [data, setData] = useState([]);
-  
-  //const [slot, setSlot] = useState([]);
-
-  /* useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('/api/timeslotdata'); // Replace '/api/data' with your actual backend API endpoint
-        setData(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-
-    fetchData();
-  },); */
-
-  /* const confirmBooked = () => {
-    setSlot("BOOKED");
-  }; */
-
-  
-
+const [bookedslot,setBookedslots]=useState([])
+const [availbleTimeslot,SetavailableTimeslot]=useState(["3.00 to 3.30pm","3.30 to 4.00pm","4.00 to 4.30pm","4.30 to 5.00pm","5.00 to 5.30pm","5.30 to 6.00pm"])
+const addtimeslot=(item)=>{
+setBookedslots([...bookedslot,item])
+}
   return (
     <>
       <Header />
       <h1 className='text-center m-4'>Choose Your Time-Slot</h1>
-      <div className='time-container text-center'>
-        <TimeSlots />
-      </div>
-      <div className='text-center'>
-        <Button variant='success' className='mt-0 rounded-pill h-25 w-25 m-1'>
-          <Link to='/thankyoupage' style={{ textDecoration: "none", color: "white"}}>Confirm As Booked</Link>
-        </Button>
+      <div className='buttondiv'>
+        {availbleTimeslot.map((item,key)=>{
+          if(!bookedslot.includes(item))
+          {
+          return(
+            <button className='timebuttons' key={key} onClick={()=>addtimeslot(item)}>{item}</button>
+          )
+          }
+          else{
+            return(
+            <div key={key} className='bookdivparent'>
+            <button className='timebuttons'>{item}</button>
+            <div className='bookdiv'>
+            <p className='herep'>Booked</p>
+            </div>
+            </div>
+            )
+          }
+        })}
       </div>
     </>
   );
